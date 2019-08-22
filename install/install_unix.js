@@ -6,25 +6,25 @@ module.exports = function(){
 		output,
 		platform = process.platform;
 		
-	if(platform != 'darwin'){
-		cmd = spawnSync('dpkg', ['-l']);
-		output = cmd.stdout.toString('utf-8');
+// 	if(platform != 'darwin'){
+// 		cmd = spawnSync('dpkg', ['-l']);
+// 		output = cmd.stdout.toString('utf-8');
 		
-		if(cmd.stderr.toString('utf-8')){
-			console.log("Error: ");
-			console.log(cmd.stderr.toString('utf-8'));
-			process.exit(1);
-		}
+// 		if(cmd.stderr.toString('utf-8')){
+// 			console.log("Error: ");
+// 			console.log(cmd.stderr.toString('utf-8'));
+// 			process.exit(1);
+// 		}
 
-		if(output.includes('libcups2-dev')){
-			console.log('libcups2-dev found!');
-		}
-		else{
-			console.error('libcups2-dev is required but was not found');
-			process.exit(1);
-		}
+// 		if(output.includes('libcups2-dev')){
+// 			console.log('libcups2-dev found!');
+// 		}
+// 		else{
+// 			console.error('libcups2-dev is required but was not found');
+// 			process.exit(1);
+// 		}
 
-	}
+// 	}
 
 	cmd = spawnSync('npm', ['run', 'build']);
 	
