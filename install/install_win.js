@@ -23,7 +23,10 @@ module.exports = function(){
 
 	var pattern = new RegExp(".*edge.*", "gi");
 	var choices;
+	
+	makeEnv('electron-edge-js');
 
+	/*
 	try {
 		choices = fs.readdirSync(__dirname + "/../../");
 	} catch (error) {}
@@ -51,6 +54,7 @@ module.exports = function(){
 	} else {
 		manuallyInsert();
 	}
+	*/
 
 };
 
